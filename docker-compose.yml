@@ -1,0 +1,29 @@
+version: '3.7'
+
+services:
+    web:
+        restart: always
+        build: .
+        command: python main.py
+        ports:
+            - "8010:8010"
+        depends_on:
+            - redis
+        volumes:
+            - .:/code
+        env_file: .env
+    
+    redis:
+        restart: always
+        image: redislabs/redistimeseries
+        # command: redis-server
+        # volumes:
+        #     # - ./redis.conf:/usr/local/etc/redis/redis.conf
+        #     - redis-data:/data
+        ports:
+            - "6379:6379"
+        
+    
+
+# volumes:
+#     redis-data:

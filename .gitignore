@@ -1,0 +1,9 @@
+.vscode
+*.code-workspace
+*.py[doc]
+*.back
+/cli/
+/__pycache__/
+env.sh
+/example/
+/.pytest_cache/
